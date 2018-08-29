@@ -1,0 +1,21 @@
+.apresentacao{
+	background-color: #044d9d;
+}
+
+.txt-centro{
+	text-align: center;
+}
+
+.margin-t{
+	margin-top: 30px;
+}
+
+.margin-l{
+	margin-left: 15px;
+}
+
+.shadow-t{
+	-webkit-box-shadow: inset 0px 71px 300px -134px rgba(0,0,0,0.11);
+	-moz-box-shadow: inset 0px 71px 300px -134px rgba(0,0,0,0.11);
+	box-shadow: inset 0px 71px 300px -134px rgba(0,0,0,0.11);
+}
