@@ -25,3 +25,11 @@ position: absolute;
 font-size: 13px;
 left: 15px;
 }
+
+.carousel-3d-container {
+  .carousel-3d-slide {
+    padding: 20px;
+    
+    .title { font-size: 22px; }
+  }
+}
