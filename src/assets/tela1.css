@@ -27,9 +27,34 @@ left: 15px;
 }
 
 .carousel-3d-container {
+	height: 500px !important;
   .carousel-3d-slide {
     padding: 20px;
+
     
     .title { font-size: 22px; }
   }
+}
+
+.carousel-3d-slide{
+	background-color: white !important;
+	border-radius: 5px !important;
+	-webkit-box-shadow: 4px 10px 67px -16px rgba(0,0,0,0.75);
+	-moz-box-shadow: 4px 10px 67px -16px rgba(0,0,0,0.75);
+	box-shadow: 4px 10px 67px -16px rgba(0,0,0,0.75);
+	
+}
+
+.carousel-3d-slide.right-1 h3, .carousel-3d-slide.right-1 p, .carousel-3d-slide.right-1 div, .carousel-3d-slide.left-1 h3, .carousel-3d-slide.left-1 p, .carousel-3d-slide.left-1 div{
+	opacity: 0.30 !important;
+}
+
+.carousel-3d-slider{
+	margin-top: 50px !important;
+	
+}
+
+.bg-me{
+	background-image: url("../assets/imgs/PATTERNNormal.png");
+	background-repeat: repeat-x;
 }
