@@ -2,11 +2,11 @@
   <div>
  <header>
       <div class="row">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: transparent;">
-    
+    <nav :class="{'bg-branco' : isScroll, 'apresentacao' : !isScroll}" class="navbar navbar-expand-lg navbar-light fixed-top">    
       <div class="col-6 offset-lg-1 col-lg-4">
       <a class="navbar-brand" href="#">
-        <img  src="../assets/imgs/logo.png" class="brand img-fluid" alt="">
+        <img v-show="!isScroll" src="../assets/imgs/logo.png" class="brand img-fluid" alt="">
+        <img v-show="isScroll" src="../assets/imgs/logo1.png" class="brand img-fluid" alt="">
       </a>
       </div>
 
@@ -21,19 +21,19 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item mr-5">
-              <a class="nav-link" href="#">sobre <span class="sr-only">(current)</span></a>
+              <a :class="{'branco' : !isScroll, 'azul-me' : isScroll}" class="nav-link" href="#">sobre <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item mr-5">
-              <a class="nav-link" href="#">blog</a>
+              <a :class="{'branco' : !isScroll, 'azul-me' : isScroll}"  class="nav-link" href="#">blog</a>
             </li>
             <li class="nav-item mr-5">
-              <a class="nav-link" href="#">suporte</a>
+              <a :class="{'branco' : !isScroll, 'azul-me' : isScroll}"  class="nav-link" href="#">suporte</a>
             </li>
             <li class="nav-item active mr-5">
-              <a class="nav-link" href="#">login</a>
+              <a :class="{'branco' : !isScroll, 'azul-me' : isScroll}"  class="nav-link" href="#">login</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">cadastrar</a>
+              <a :class="{'branco' : !isScroll, 'azul-me' : isScroll}"  class="nav-link" href="#">cadastrar</a>
             </li>
           </ul>
         </div>
@@ -44,7 +44,7 @@
     </header>
 
     <div class="apresentacao container-fluid">
-      <div class="row justify-content-center">
+      <div class="row justify-content-end">
         <div class="col-lg-5" style="margin-top: 250px;">
           <h1 style="color: white;">MELHORE OS<br>
            SEUS ENVIOS</h1>
@@ -53,7 +53,7 @@
            de fretes, conectando clientes e transportadoras.</h5>
            <button type="button" class="btn btn-light"><b style="color:#044d9d;">DÊ O PRIMEIRO PASSO</b></button>
         </div>
-        <div class="col-lg-5" style="margin-top: 140px;">
+        <div class="col-lg-5 mr-5" style="margin-top: 140px;">
           <img src="../assets/imgs/caixa.png" alt="" class="img-fluid">
         </div>
       </div>
@@ -233,9 +233,28 @@ export default {
   components: {
     Carousel3d,
     Slide
-  }
+  },
+  data: () => ({
+        isScroll: false
+    }),
+    methods:{
+      getScroll() {   
+           
+          if(window.scrollY > 200){            
+           this.isScroll = true;
+          }else{
+           this.isScroll = false;
+          }
+          
+        }
+      },
+      mounted() {
+        window.addEventListener('scroll',this.getScroll)
+      }
   
 };
+
+
 
 </script>
 

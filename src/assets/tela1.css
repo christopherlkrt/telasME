@@ -58,3 +58,27 @@ left: 15px;
 	background-image: url("../assets/imgs/PATTERNNormal.png");
 	background-repeat: repeat-x;
 }
+
+.bg-branco{
+	background-color: white;
+}
+
+
+.branco{
+	color: white !important;
+}
+
+.branco:hover{
+	border-radius: 5px !important;
+	background-color: #043d9d !important;
+}
+
+.azul-me{
+	color: #044d9d !important;
+}
+
+.azul-me:hover{
+	border-radius: 5px !important;
+	color: white !important;
+	background-color: #044d9d !important;
+}
