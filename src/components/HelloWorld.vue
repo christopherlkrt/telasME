@@ -11,14 +11,14 @@
       </div>
 
       
-      <button class="navbar-toggler col-2" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler col-2" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
 
       <div class="col-lg-6">
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item mr-5">
               <a :class="{'branco' : !isScroll, 'azul-me' : isScroll}" class="nav-link" href="#">sobre <span class="sr-only">(current)</span></a>
@@ -86,21 +86,21 @@
       <div class="form-row justify-content-between" style="align-items: center;">
         <div class="form-group col-lg-4">
           <label for="cepOrigem">CEP de Origem</label>
-          <input type="text" class="form-control form-control-lg">
+          <input type="tel" v-mask="'#####-###'" class="form-control form-control-lg" minlength="8">
         </div>
         <div>
           <img src="../assets/imgs/seta.png" class="img-fluid" alt="">
         </div>
         <div class="form-group col-lg-4">
           <label for="cepDestino">CEP de Destino</label>
-          <input type="text" class="form-control form-control-lg">
+          <input type="tel" v-mask="'#####-###'" class="form-control form-control-lg" minlength="8">
         </div>
       </div>
 
       <div class="form-row justify-content-between" style="align-items: center;">
         <div class="form-group col-lg-2 mx-0">
           <label for="altura">Altura</label>
-          <input type="text" class="form-control form-control-lg">
+          <input type="tel" class="form-control form-control-lg">
         </div>
         <div class="form-group col-lg-2 mx-0">
           <label for="largura">Largura</label>
@@ -227,13 +227,16 @@
 <script>
 
 import { Carousel3d, Slide } from 'vue-carousel-3d';
+import {TheMask} from 'vue-the-mask'
+import {mask} from 'vue-the-mask'
 
 export default {
   name: 'HelloWorld',
-  components: {
+  components: { TheMask,
     Carousel3d,
     Slide
   },
+  directives: {mask},
   data: () => ({
         isScroll: false
     }),

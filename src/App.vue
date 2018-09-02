@@ -9,7 +9,8 @@
 <script>
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
-
+import VueTheMask from 'vue-the-mask'
+Vue.use(VueTheMask)
 Vue.use(BootstrapVue);
 
 import 'bootstrap/dist/css/bootstrap.css'
